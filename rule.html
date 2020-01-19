@@ -23,37 +23,75 @@
       <div class="row">
         <div class="col-md-12 p-3">
           <form class="">
-          	<div class="form-group"><label>Name</label><input type="text" class="form-control" placeholder="Name">
-            <div class="form-group"> <label>Ruletype</label><br>
-              <select>
-                <option value="-">-- Select a Rule type --</option>
-                <option value="compare">Compare</option>
+          	<div class="form-group" id="form_rule_name"><label>Name</label><input type="text" class="form-control" placeholder="Name">
+            <div class="form-group"> <label>Rule</label><br>
+              <select id="form_rule">
+                <option value="-">-- Select a Rule --</option>
+                <option value="ARNG">Attribute Range Rule</option>
+                <option value="ACMP">Attribute Compare rule</option>
+                <option value="ALIS">Attribute List rule </option>
+                <option value="TCMP">Tuple Compare rule</option>
+                <option value="ICMP">Inter-Entity Compare rule</option>
               </select>
-                <div class="form-group"><label>Operator</label><br>
-                  <select>
-                    <option value="-">-- Select a Operator --</option>
-                    <option value="compare">Equals</option>
+                <div class="form-group" id="form_group_operator_arng"><label>Operator</label><br>
+                  <select id="form_operator">
+                    <option value="-">-- Select an Operator --</option>
+                    <option value="BETWEEN">BETWEEN</option>
+                    <option value="NOT BETWEEN">NOT BETWEEN</option>                                                                                              
                   </select>
-                  <div class="form-group"><label>Compare with</label><br>
-                    <select>
-                      <option value="-">-- Select a Table --</option>
-                      <option value="compare">id</option>
-                    </select>
-                    <div class="form-group"><label>Value</label><input type="text" class="form-control" placeholder="Value">
-                      <div class="form-group"><label>Error</label><input type="text" class="form-control" placeholder="Error message"></div>
-                    </div>
-                  </div>
                 </div>
+                <div class="form-group" id="form_group_table"><label>Table 1</label><br>
+                  <select id="form_compare">
+                    <option value="-">-- Select a Table --</option>
+                    <option value="compare"></option>
+                  </select>
+                </div>     
+                <div class="form-group" id="form_group_column"><label>Column 1</label><br>
+                  <select id="form_compare">
+                    <option value="-">-- Select a Column --</option>
+                    <option value="compare"></option>
+                  </select>
+                </div> 
+                <div class="form-group" id="form_group_operator"><label>Operator</label><br>
+                  <select id="form_operator">
+                    <option value="-">-- Select an Operator --</option>
+                    <option value="=">=</option>
+                    <option value="!=">!=</option>
+                    <option value=">">></option>
+                    <option value="<"><</option>
+                    <option value=">=">>=</option>
+                    <option value="<="><=</option>
+                    <option value="LIKE">LIKE</option>
+                    <option value="IS NULL">IS NULL</option>                                                                                                
+                  </select>
+                </div>
+                <div class="form-group" id="form_group_table2"><label>Table 2</label><br>
+                  <select id="form_compare">
+                    <option value="-">-- Select a Table --</option>
+                    <option value="compare"></option>
+                  </select>
+                </div>                 
+                <div class="form-group" id="form_group_column2"><label>Column 2</label><br>
+                  <select id="form_compare">
+                    <option value="-">-- Select a Column --</option>
+                    <option value="compare"></option>
+                  </select>
+                </div>   
+                <div class="form-group" id="form_group_value"><label>Value</label><input type="text" class="form-control" placeholder="Value"></div>
+                <div class="form-group" id="form_group_value_extra"><label>Value</label><input type="text" class="form-control" placeholder="Value"></div>
+                <div class="form-group" id="form_group_list"><label>In List</label><input type="text" class="form-control" placeholder="Example: apple, pear, banana"></div>
+                <div class="form-group"><label>Error</label><input type="text" class="form-control" placeholder="Error message"></div>
               </div>
             </div>
           </form>
         </div>
       </div>
       <a class="btn btn-info" href="table.html">Save</a>
-      <a class="btn btn-info" href="table.html">Terug</a>
+      <a class="btn btn-info" href="table.html">Back</a>
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+      <script src="script/script.js"></script>
     </div>
   </div>
 </body>
