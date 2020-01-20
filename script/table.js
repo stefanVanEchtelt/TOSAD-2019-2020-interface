@@ -1,13 +1,14 @@
 $(document).ready(function() {
-    console.log(getTrHtml());
-    let fetchOptions  = {
-        method: 'GET',
-    };
-
-    fetch('http://localhost:8080/api/tosad/table', fetchOptions)
+    fetch('http://localhost:8080/api/tosad/table', {method: 'GET'})
         .then((response) => {
             if (response.ok) {
-                console.log(response.json());
+                return response.json();
+            }
+        }).then((tables) => {
+            let tableHtml = document.getElementById('table_table__body_data');
+            var i;
+            for (i = 0; i < tables.length; i++) {
+                tableHtml.innerHTML += getTrHtml(tables[i].name);
             }
         });
 });
