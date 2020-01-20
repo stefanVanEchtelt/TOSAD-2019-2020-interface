@@ -2,6 +2,7 @@
 initForm();
 
 var rule = $("#form_rule");
+$("#form_save").click(sendRule);
 
 rule.change(function(){
 	initForm();
@@ -44,16 +45,13 @@ function initForm(){
 	$("#form_group_value").hide();
 	$("#form_group_value_extra").hide();	
 	$("#form_group_list").hide();
-
-	//$("#form_save").click(sendRule();
 }
 
 function sendRule(){
-
 	let formData = new FormData(document.querySelector("#generate_rule"));
 	let encData = new URLSearchParams(formData.entries());
-
-	fetch('http://localhost:8080/api/tosad/businessRule/businessRule', {method: 'POST', body: encData, fetchoptions})
+	
+	fetch('http://localhost:8080/api/tosad/businessRule/businessRule', {method: 'POST', body: encData})
 	.then((response) => { 
 		if (response.ok) {
 			console.log(response.json());
