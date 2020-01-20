@@ -44,4 +44,26 @@ function initForm(){
 	$("#form_group_value").hide();
 	$("#form_group_value_extra").hide();	
 	$("#form_group_list").hide();
+
+	$("#form_save").click(sendRule();
 }
+
+function sendRule(){
+
+	let formData = new FormData(document.querySelector("#generate_rule"));
+	let encData = new URLSearchParams(formData.entries());
+
+	fetch('http://localhost:8080/api/tosad/businessRule/businessRule', {method: 'POST', body: encData, fetchoptions})
+	.then((response) => { 
+		if (response.ok) {
+			console.log(response.json());
+		} 
+		else {
+			console.log(response.json());
+		}
+	})
+	.then((myJson) => {
+		console.log("hoer");
+	});
+}
+
