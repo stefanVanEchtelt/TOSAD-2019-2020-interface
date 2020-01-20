@@ -45,7 +45,7 @@ function initForm(){
 	$("#form_group_value_extra").hide();	
 	$("#form_group_list").hide();
 
-	$("#form_save").click(sendRule();
+	//$("#form_save").click(sendRule();
 }
 
 function sendRule(){
