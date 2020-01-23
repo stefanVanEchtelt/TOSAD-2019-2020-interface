@@ -106,7 +106,7 @@ function sendRule(){
     console.log(pair[0]+ ', ' + pair[1]); 
     }
     
- /*  fetch('http://localhost:8080/api/tosad/businessRule/businessRule', {method: 'POST', body: encData})
+   fetch('http://localhost:8080/api/tosad/businessRule/businessRule', {method: 'POST', body: encData})
     .then((response) => { 
         if (response.ok) {
             console.log('succes 1');
@@ -118,6 +118,6 @@ function sendRule(){
         }
     })
     .then((myJson) => {
-    });  */
+    });  
 }
 
