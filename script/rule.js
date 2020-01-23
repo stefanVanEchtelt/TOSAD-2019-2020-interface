@@ -9,23 +9,21 @@ $(document).ready(function() {
     $("#form_column").val(columnName);
     $("#head_name").html(columnName);
 
-    fetch('http://localhost:8080/api/tosad/table', {method: 'GET'})
+    fetch('http://localhost:8080/api/tosad/table/' + tableName, {method: 'GET'})
     .then((response) => {
         if (response.ok) {
             return response.json();
         }
     }).then((tables) => {
-        let table1 = $("#table1");
-        let table2 = $("#table2");
+        let table = $("#table");
         let i;
         for (i = 0; i < tables.length; i++) {
-            table1.append($("<option value=" + tables[i].name + ">" + tables[i].name + "</option>"));
-            table2.append($("<option value=" + tables[i].name + ">" + tables[i].name + "</option>"));            
+            table.append($("<option value=" + tables[i].name + ">" + tables[i].name + "</option>"));            
         }
     });
 
-    $("#table2").change(function(){
-        getColumnsByTable($("#table2").val(), $("#column2"));
+    $("#table").change(function(){
+        getColumnsByTable($("#table").val(), $("#column2"));
     });
 
     $("#form_rule").change(function(){
@@ -51,7 +49,6 @@ function getColumnsByTable(table, column){
     });
 }
 
-//var rule_name = $("#form_rule_name");
 initForm();
 
 var rule = $("#form_rule");
@@ -79,7 +76,7 @@ rule.change(function(){
             $("#form_group_operator").show();                   
             break;
         case "ICMP":
-            $("#form_group_table2").show();
+            $("#form_group_table").show();
             $("#form_group_column2").show();        
             $("#form_group_operator").show();               
     }
@@ -89,7 +86,6 @@ function initForm(){
     $("#form_group_operator").hide();
     $("#form_group_operator_arng").hide();
     $("#form_group_table").hide();
-    $("#form_group_table2").hide();
     $("#form_group_column").hide();
     $("#form_group_column2").hide();    
     $("#form_group_compare").hide();
