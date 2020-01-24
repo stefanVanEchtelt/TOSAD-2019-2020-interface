@@ -105,12 +105,12 @@ function sendRule(){
    fetch('http://localhost:8080/api/tosad/businessRule/businessRule', {method: 'POST', body: encData})
     .then((response) => { 
         if (response.ok) {
-            console.log('succes 1');
             console.log(response.json());
-            console.log('succes 2');
+            window.location.replace("table.html");
         } 
         else {
             console.log(response.json());
+            alert(response.json());
         }
     })
     .then((myJson) => {
