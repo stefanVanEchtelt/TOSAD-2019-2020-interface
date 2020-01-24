@@ -17,10 +17,10 @@ function getBusinessRules() {
         .then((ruleJson) => {
             let index;
             for (index = 0; index < ruleJson.length; index++){
-                if (ruleJson[index].isExecuted === 1) {
-                    } else {
+                // if (ruleJson[index].isExecuted === 1) {
+                //     } else {
                     let code = fetchCode(ruleJson[index].id);
-                }
+                // }
             }
             $("#"+3).click(function(){handleRun("ooooi")});
 
